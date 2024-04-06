@@ -17,7 +17,7 @@ The container configuration is as [Host Network](https://docs.docker.com/network
 - [Alpine Linux 3.19](https://www.alpinelinux.org/)
 
 ### Docker Hub reference:
-https://hub.docker.com/layers/library/rabbitmq/3.13-management-alpine/images/sha256-5da18052312b38f6415a50a60c6fd2a418336993947fac25d309765353ba1d88
+[https://hub.docker.com/layers/library/rabbitmq/3.13-management-alpine/](https://hub.docker.com/layers/library/rabbitmq/3.13-management-alpine/images/sha256-5da18052312b38f6415a50a60c6fd2a418336993947fac25d309765353ba1d88)
 
 ### Built from Docker RabbitMQ:
 
