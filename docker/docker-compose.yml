@@ -1,0 +1,21 @@
+services:
+  rabbitmq:
+    image: rabbitmq:3.13-management-alpine
+    container_name: ${COMPOSE_PROJECT_NAME}
+    environment:
+      - RABBITMQ_ERLANG_COOKIE=${RABBITMQ_COOKIE}
+      - RABBITMQ_NODENAME=${RABBITMQ_NODENAME}
+      - RABBITMQ_DEFAULT_USER=${RABBITMQ_USER}
+      - RABBITMQ_DEFAULT_PASS=${RABBITMQ_PASS}
+    ports:
+        - ${COMPOSE_PROJECT_PORT_1}:5672
+        - ${COMPOSE_PROJECT_PORT_2}:15672
+    volumes:
+        - ~/.docker-conf/rabbitmq/data/:/var/lib/rabbitmq/
+        - ~/.docker-conf/rabbitmq/log/:/var/log/rabbitmq
+    networks:
+        - rabbitmq_so
+
+networks:
+  rabbitmq_so:
+    driver: bridge
