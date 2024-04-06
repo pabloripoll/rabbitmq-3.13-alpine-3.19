@@ -16,11 +16,12 @@ The container configuration is as [Host Network](https://docs.docker.com/network
 
 - [Alpine Linux 3.19](https://www.alpinelinux.org/)
 
-## Docker Hub reference link:
+## Docker Hub reference:
 https://hub.docker.com/layers/library/rabbitmq/3.13-management-alpine/images/sha256-5da18052312b38f6415a50a60c6fd2a418336993947fac25d309765353ba1d88
 
-## Github reference link
-https://github.com/docker-library/rabbitmq/blob/6cc0f66ec13b06c153a7527c033cf1ad59a97ef3/3.13/alpine/management/Dockerfile
+## Built from Docker RabbitMQ:
+
+[Docker Official Image packaging for RabbitMQ](https://github.com/docker-library/rabbitmq/blob/6cc0f66ec13b06c153a7527c033cf1ad59a97ef3/3.13/alpine/management/Dockerfile)
 
 ### Project objetives with Docker
 
