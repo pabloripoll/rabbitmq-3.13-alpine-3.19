@@ -31,3 +31,58 @@ The container configuration is as [Host Network](https://docs.docker.com/network
 * The logs of all the services are redirected to the output of the Docker container (visible with `docker logs -f <container name>`)
 * Follows the KISS principle (Keep It Simple, Stupid) to make it easy to understand and adjust the image to your needs
 * Services independency to connect the application to other database allocation
+
+## Directories Structure
+
+This repository is structured so it can be included into other projects inside a parent main `/docker` directory
+```
+.
+│
+├── docker
+│   ├── rabbitmq (this repository)
+│   │   ├── docker
+│   │   │   ├── config
+│   │   │   ├── .env
+│   │   │   └── docker-compose.yml
+│   │   │
+│   │   └── Makefile
+│   │
+│   └── nginx-php (example)
+│
+├── symfony
+│   └── (application...)
+│
+├── .env
+├── .env.example
+└── Makefile
+```
+
+## Automation with Makefile
+
+Makefiles are often used to automate the process of building and compiling software on Unix-based systems as Linux and macOS.
+
+*On Windows - I recommend to use Makefile: \
+https://stackoverflow.com/questions/2532234/how-to-run-a-makefile-in-windows*
+
+Makefile recipies
+```bash
+$ make help
+usage: make [target]
+
+targets:
+Makefile  help                  shows this Makefile help message
+Makefile  hostname              shows local machine hostname ip
+Makefile  fix-permission        sets project directory permission
+Makefile  port-check            shows this project port availability on local machine
+Makefile  env                   checks if docker .env file exists
+Makefile  env-set               sets docker .env file
+Makefile  ssh                   enters the container shell
+Makefile  build                 builds the container from Dockerfile
+Makefile  up                    attaches to containers for a service and also starts any linked services
+Makefile  start                 starts the container running
+Makefile  stop                  stops the container running - data will not be destroyed
+Makefile  restart               execute this Makefile "stop" and "start" recipes
+Makefile  clear                 removes container from Docker running containers
+Makefile  destroy               delete container image from Docker - Docker prune commands still needed to be applied manually
+Makefile  dev                   set a development enviroment
+```
